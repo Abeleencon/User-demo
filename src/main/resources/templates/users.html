@@ -3,19 +3,22 @@
 <head>
 <title>Users Page</title>
 <meta charset="utf-8">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 	<div class="container">
-	 	<div th:if="${not #lists.isEmpty(users)}">
-			<h1>
-				<u>USERS PAGE (URL: /users)</u> 
-			</h1>
+		<div th:if="${not #lists.isEmpty(users)}">
+			<h2>
+				<u>USERS PAGE (URL: /users)</u>
+			</h2>
 			<h2>Code Warriors Users</h2>
-			<p>The table-bordered class adds borders to a table:</p>
-			<table class="table table-bordered">
-				<thead>
+			<p>
+				<a href="home.html" th:href="@{/}" style="text-align: right">Back to home</a>
+			</p>
+			<table class="table table-striped">
+				<thead class="bg-primary">
 					<tr>
 						<th>NAME</th>
 						<th>USERNAME</th>
@@ -25,24 +28,19 @@
 				</thead>
 				<tbody>
 					<tr th:each="user: ${users}">
-						<td th:text="${user.name"></td>
-						<td th:text="${user.username"></td>
-						<td th:text="${user.email"></td>
-						<td th:text="${user.phone"></td>
-						</tr>
-						<!--<td th:text="${user.address"></td>
-					<tr th:each="user: ${users}">
-						<td th:text="${user.name"></td>
+						<td th:text="${user.name}"></td>
 						<td th:text="${user.username}"></td>
-						<td th:text="${user.companyName}"></td>
-						<td th:text="${user.street">
-						  <td th:text="${user.address.suite"></td>
-						<td th:text="${user.address.city"></td>
-						<td th:text="${user.zipcode"></td>
-						<td th:text="${user.email}">
-						<td th:text="${user.address.phone"></td>
-						<td th:text="${user.website"></td>
-					</tr>-->
+						<td th:text="${user.company.name}"></td>
+						<td> <br th:text="${user.address.street}">
+							<br th:text="${user.address.suite}"> 
+							<br th:text="${user.address.city}">
+							<br th:text="${user.address.zipcode}">
+							</td>
+						<td><br th:text="'Email: ' + ${user.email}"></br>
+							<br th:text="'Phone: ' + ${user.phone}"></br> 
+							<br th:text="'Website: ' + ${user.website}"></br>
+							</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>

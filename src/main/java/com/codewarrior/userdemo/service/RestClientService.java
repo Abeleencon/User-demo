@@ -3,11 +3,11 @@ package com.codewarrior.userdemo.service;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import org.apache.tomcat.jni.Address;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.codewarrior.userdemo.model.Address;
 import com.codewarrior.userdemo.model.Company;
 import com.codewarrior.userdemo.model.Users;
 
@@ -24,7 +24,7 @@ public class RestClientService {
         this.restTemplate = restTemplate;
     }
 	
-	public List<Users> GetAllUsers(){
+	public List<Users> getAllUsers(){
         return Arrays.stream(restTemplate.getForObject(GET_ALL_URL,Users[].class, Company.class, Address.class)).collect(Collectors.toList());
     }
 
