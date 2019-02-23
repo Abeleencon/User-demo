@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Users Page</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+</head>
+<body>
+
+	<div class="container">
+	 	<div th:if="${not #lists.isEmpty(users)}">
+			<h1>
+				<u>USERS PAGE (URL: /users)</u> 
+			</h1>
+			<h2>Code Warriors Users</h2>
+			<p>The table-bordered class adds borders to a table:</p>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>NAME</th>
+						<th>USERNAME</th>
+						<th>COMPANY</th>
+						<th>ADDRESS</th>
+						<th>CONTACT INFO</th>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${users}">
+						<td th:text="${user.name"></td>
+						<td th:text="${user.username"></td>
+						<td th:text="${user.email"></td>
+						<td th:text="${user.phone"></td>
+						</tr>
+						<!--<td th:text="${user.address"></td>
+					<tr th:each="user: ${users}">
+						<td th:text="${user.name"></td>
+						<td th:text="${user.username}"></td>
+						<td th:text="${user.companyName}"></td>
+						<td th:text="${user.street">
+						  <td th:text="${user.address.suite"></td>
+						<td th:text="${user.address.city"></td>
+						<td th:text="${user.zipcode"></td>
+						<td th:text="${user.email}">
+						<td th:text="${user.address.phone"></td>
+						<td th:text="${user.website"></td>
+					</tr>-->
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

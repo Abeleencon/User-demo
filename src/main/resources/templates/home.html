@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+    <div class="page-content">
+        <h1 th:text="|Code Warriors|"></h1>
+        <h2 th:text="|Welcome to the Code Warriors Users Framework|"></h2>
+        <h2> Click <a th:href="${'/users'}">here</a> to view all users</h2>
+    </div>
+</body>
+</html>
