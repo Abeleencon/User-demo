@@ -4,6 +4,7 @@
 <title>Users Page</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/user.css" />
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -11,11 +12,11 @@
 	<div class="container">
 		<div th:if="${not #lists.isEmpty(users)}">
 			<h2>
-				<u>USERS PAGE (URL: /users)</u>
+				USERS PAGE (URL: /users)
 			</h2>
 			<h2>Code Warriors Users</h2>
-			<p>
-				<a href="home.html" th:href="@{/}" style="text-align: right">Back to home</a>
+			<p style="text-align: right">
+				<a href="home.html" th:href="@{/}">Back to home</a>
 			</p>
 			<table class="table table-striped">
 				<thead class="bg-primary">
@@ -31,11 +32,11 @@
 						<td th:text="${user.name}"></td>
 						<td th:text="${user.username}"></td>
 						<td th:text="${user.company.name}"></td>
-						<td> <br th:text="${user.address.street}">
+						<td><br th:text="${user.address.street}">
 							<br th:text="${user.address.suite}"> 
 							<br th:text="${user.address.city}">
 							<br th:text="${user.address.zipcode}">
-							</td>
+						</td>
 						<td><br th:text="'Email: ' + ${user.email}"></br>
 							<br th:text="'Phone: ' + ${user.phone}"></br> 
 							<br th:text="'Website: ' + ${user.website}"></br>

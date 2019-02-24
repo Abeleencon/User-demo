@@ -1,0 +1,18 @@
+table {
+    border: 2px solid black;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: .8rem;
+}
+
+td {
+  border: 2px solid black;
+  text-align: left;
+  height: 10px;
+  padding: 5px;
+  
+}
+th {
+	color: white;
+	line-height: 0.7;
+}
